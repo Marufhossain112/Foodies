@@ -69,7 +69,35 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  isolation: isolate;
 }
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(117, 109, 109);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.banner > div {
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 45px;
+}
+.banner > div h4 {
+  font-size: 40px;
+}
+.banner > div p {
+  font-size: 30px;
+}
+
 @media only screen and (max-width: 1320px) {
   header {
     padding: 0 50px;
@@ -81,6 +109,12 @@ header {
   }
 }
 @media only screen and (max-width: 900px) {
+  header {
+    height: 70vh;
+  }
+  .navbar {
+    padding: 0;
+  }
   .hamburger {
     display: block;
     cursor: pointer;
@@ -94,11 +128,12 @@ header {
   .nav-bar {
     height: 0;
     position: absolute;
-    top: 80px;
+    top: 14px;
     left: 0;
     right: 0;
     width: 100vw;
-    background: #11101b;
+    /*background: #11101b;
+    */
     overflow: hidden;
     transition: 0.2s;
     -webkit-transition: 0.2s;
@@ -112,11 +147,11 @@ header {
     margin: 80px auto 0 auto;
     text-align: center;
     opacity: 0;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
   }
   .nav-bar ul li a {
     margin-bottom: 12px;
@@ -124,5 +159,14 @@ header {
   }
   .normal {
     display: none;
+  }
+  .banner > div {
+    height: 70vh;
+  }
+  .banner > div h4 {
+    font-size: 26px;
+  }
+  .banner > div p {
+    font-size: 20px;
   }
 }

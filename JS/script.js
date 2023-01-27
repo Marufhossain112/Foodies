@@ -11,5 +11,7 @@ navItems.forEach((item) => {
         navItems.forEach(f =>
             f.classList.remove('active'));
         e.target.classList.toggle("active");
+        console.log(item);
+
     })
 })
